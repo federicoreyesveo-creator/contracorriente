@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contracorriente | Marisquería en la Narvarte, CDMX</title>
+  <meta name="description" content="Marisquería en Vértiz Narvarte, CDMX. Aguachiles, ceviches, tostadas, tacos de pulpo y micheladas en Ixcateopan 72, Benito Juárez. Reserva por WhatsApp.">
+  <meta name="theme-color" content="#02626e">
+  <meta property="og:title" content="Contracorriente | Marisquería en la Narvarte, CDMX">
+  <meta property="og:description" content="Aguachiles, ceviches, tostadas, tacos de pulpo y micheladas en Ixcateopan 72, Vértiz Narvarte, CDMX.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:image" content="img/contracorriente-1.webp">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Con JS activo se muestra el loader; sin JS todo el contenido queda visible.
+    document.documentElement.classList.add('js');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Contracorriente",
+    "description": "Marisquería y cocina de mar en Vértiz Narvarte, Ciudad de México.",
+    "sameAs": ["https://www.instagram.com/contracorriente_cdmx/"],
+    "servesCuisine": ["Mariscos", "Mexicana"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ixcateopan 72, Vértiz Narvarte",
+      "addressLocality": "Benito Juárez",
+      "addressRegion": "CDMX",
+      "postalCode": "03600",
+      "addressCountry": "MX"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 19.3801216, "longitude": -99.1571828 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Saturday", "Sunday"], "opens": "12:30", "closes": "19:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Friday"], "opens": "12:30", "closes": "18:30" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#carta">Saltar a la carta</a>
+
+  <!-- Símbolos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="pez" viewBox="0 0 120 60">
+      <path d="M116 30C96 12 66 8 46 14 36 17 28 23 22 29L4 14c4 10 4 22 0 32l18-15c6 6 14 12 24 15 20 6 50 2 70-16Z"/>
+      <path d="M92 17c-6 8-6 18 0 26"/>
+      <path d="M58 12c4-8 14-10 20-8-4 4-6 8-6 8"/>
+      <path d="M62 49c2 7 10 9 14 7-3-3-4-8-4-8"/>
+      <path d="M72 24c3 2 3 4 0 6M60 26c3 2 3 4 0 6M72 34c3 2 3 4 0 6M60 36c3 1 3 3 0 5M48 30c3 2 3 4 0 6"/>
+      <circle cx="102" cy="27" r="2.2"/>
+    </symbol>
+    <symbol id="estrella" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6.1 6.700.9-4.900 4.600 1.200 6.600L12 17.600l-5.900 3.200 1.200-6.600L2.400 9.600l6.700-.9z"/></symbol>
+    <symbol id="whatsapp" viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200Zm4.5-6.100c-.2-.1-1.5-.7-1.700-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.200-.7-.7-1.200-1.500-1.400-1.700-.1-.2 0-.4.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.300-.2.300-.9.900-.9 2.100s.9 2.500 1 2.600c.1.200 1.800 2.700 4.300 3.800.6.300 1.100.4 1.400.5.600.2 1.100.200 1.500.100.500-.100 1.500-.600 1.700-1.200.200-.600.200-1.100.100-1.200 0-.100-.200-.100-.500-.3Z"/>
+    </symbol>
+  </svg>
+
+  <!-- Loading -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__frame" id="loaderFrame"></div>
+    <div class="loader__fish" id="loaderFish">
+      <svg class="loader__fish-line" viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg>
+      <svg class="loader__fish-fill" id="loaderFishFill" viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__bar">
+      <a class="header__logo" href="#inicio" aria-label="Contra Corriente, ir al inicio">
+        <img src="img/logo.svg" width="1024" height="1024" alt="">
+      </a>
+      <nav class="header__nav" aria-label="Principal">
+        <a class="navlink navlink--desk" href="#carta" data-nav="carta">Carta</a>
+        <a class="navlink navlink--desk" href="#galeria" data-nav="galeria">Galería</a>
+        <a class="navlink navlink--desk" href="#opiniones" data-nav="opiniones">Opiniones</a>
+        <a class="navlink navlink--desk" href="#ubicacion" data-nav="ubicacion">Ubicación</a>
+        <a class="navlink" data-wa href="https://wa.me/?text=Hola%20Contracorriente%2C%20quiero%20reservar%20una%20mesa." target="_blank" rel="noopener">Reservar</a>
+      </nav>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" inert>
+    <nav aria-label="Móvil">
+      <a href="#inicio">Inicio</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a data-wa href="https://wa.me/?text=Hola%20Contracorriente%2C%20quiero%20reservar%20una%20mesa." target="_blank" rel="noopener">Reservar</a>
+    </nav>
+    <svg class="mobile-nav__fish" aria-hidden="true"><use href="#pez"/></svg>
+  </div>
+
+  <!-- El pez que nada contra el scroll -->
+  <div class="current" id="current" aria-hidden="true">
+    <span class="current__line"></span>
+    <svg class="current__fish" id="currentFish"><use href="#pez"/></svg>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio" data-section="inicio">
+      <div class="hero__currents" aria-hidden="true">
+        <svg class="flow flow--a" viewBox="0 0 2880 40" preserveAspectRatio="none"><path d="M0 20C39.1 12.8 76.6 6.0 120.0 6.0C163.4 6.0 200.9 12.8 240.0 20C279.1 27.2 316.6 34.0 360.0 34.0C403.4 34.0 440.9 27.2 480.0 20C519.1 12.8 556.6 6.0 600.0 6.0C643.4 6.0 680.9 12.8 720.0 20C759.1 27.2 796.6 34.0 840.0 34.0C883.4 34.0 920.9 27.2 960.0 20C999.1 12.8 1036.6 6.0 1080.0 6.0C1123.4 6.0 1160.9 12.8 1200.0 20C1239.1 27.2 1276.6 34.0 1320.0 34.0C1363.4 34.0 1400.9 27.2 1440.0 20C1479.1 12.8 1516.6 6.0 1560.0 6.0C1603.4 6.0 1640.9 12.8 1680.0 20C1719.1 27.2 1756.6 34.0 1800.0 34.0C1843.4 34.0 1880.9 27.2 1920.0 20C1959.1 12.8 1996.6 6.0 2040.0 6.0C2083.4 6.0 2120.9 12.8 2160.0 20C2199.1 27.2 2236.6 34.0 2280.0 34.0C2323.4 34.0 2360.9 27.2 2400.0 20C2439.1 12.8 2476.6 6.0 2520.0 6.0C2563.4 6.0 2600.9 12.8 2640.0 20C2679.1 27.2 2716.6 34.0 2760.0 34.0C2803.4 34.0 2840.9 27.2 2880.0 20"/></svg>
+        <svg class="flow flow--b" viewBox="0 0 2880 40" preserveAspectRatio="none"><path d="M0 20C39.1 12.8 76.6 6.0 120.0 6.0C163.4 6.0 200.9 12.8 240.0 20C279.1 27.2 316.6 34.0 360.0 34.0C403.4 34.0 440.9 27.2 480.0 20C519.1 12.8 556.6 6.0 600.0 6.0C643.4 6.0 680.9 12.8 720.0 20C759.1 27.2 796.6 34.0 840.0 34.0C883.4 34.0 920.9 27.2 960.0 20C999.1 12.8 1036.6 6.0 1080.0 6.0C1123.4 6.0 1160.9 12.8 1200.0 20C1239.1 27.2 1276.6 34.0 1320.0 34.0C1363.4 34.0 1400.9 27.2 1440.0 20C1479.1 12.8 1516.6 6.0 1560.0 6.0C1603.4 6.0 1640.9 12.8 1680.0 20C1719.1 27.2 1756.6 34.0 1800.0 34.0C1843.4 34.0 1880.9 27.2 1920.0 20C1959.1 12.8 1996.6 6.0 2040.0 6.0C2083.4 6.0 2120.9 12.8 2160.0 20C2199.1 27.2 2236.6 34.0 2280.0 34.0C2323.4 34.0 2360.9 27.2 2400.0 20C2439.1 12.8 2476.6 6.0 2520.0 6.0C2563.4 6.0 2600.9 12.8 2640.0 20C2679.1 27.2 2716.6 34.0 2760.0 34.0C2803.4 34.0 2840.9 27.2 2880.0 20"/></svg>
+        <svg class="flow flow--c" viewBox="0 0 2880 40" preserveAspectRatio="none"><path d="M0 20C39.1 12.8 76.6 6.0 120.0 6.0C163.4 6.0 200.9 12.8 240.0 20C279.1 27.2 316.6 34.0 360.0 34.0C403.4 34.0 440.9 27.2 480.0 20C519.1 12.8 556.6 6.0 600.0 6.0C643.4 6.0 680.9 12.8 720.0 20C759.1 27.2 796.6 34.0 840.0 34.0C883.4 34.0 920.9 27.2 960.0 20C999.1 12.8 1036.6 6.0 1080.0 6.0C1123.4 6.0 1160.9 12.8 1200.0 20C1239.1 27.2 1276.6 34.0 1320.0 34.0C1363.4 34.0 1400.9 27.2 1440.0 20C1479.1 12.8 1516.6 6.0 1560.0 6.0C1603.4 6.0 1640.9 12.8 1680.0 20C1719.1 27.2 1756.6 34.0 1800.0 34.0C1843.4 34.0 1880.9 27.2 1920.0 20C1959.1 12.8 1996.6 6.0 2040.0 6.0C2083.4 6.0 2120.9 12.8 2160.0 20C2199.1 27.2 2236.6 34.0 2280.0 34.0C2323.4 34.0 2360.9 27.2 2400.0 20C2439.1 12.8 2476.6 6.0 2520.0 6.0C2563.4 6.0 2600.9 12.8 2640.0 20C2679.1 27.2 2716.6 34.0 2760.0 34.0C2803.4 34.0 2840.9 27.2 2880.0 20"/></svg>
+      </div>
+
+      <div class="hero__school" aria-hidden="true">
+        <span class="pez pez--desk" style="--x:60%;--y:57%;--w:150px;--sw:1.04;--o:0.85" data-x="420" data-y="-190" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+        <span class="pez" style="--x:30%;--y:93%;--w:112px;--sw:1.39;--o:0.7" data-x="340" data-y="-120" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+        <span class="pez pez--desk" style="--x:27%;--y:88%;--w:68px;--sw:2.29;--o:0.55" data-x="-260" data-y="-210" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+        <span class="pez pez--desk" style="--x:50%;--y:49%;--w:58px;--sw:2.69;--o:0.5" data-x="150" data-y="-300" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+        <span class="pez" style="--x:58%;--y:90%;--w:92px;--sw:1.7;--o:0.65" data-x="-380" data-y="-150" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+        <span class="pez" style="--x:84%;--y:87%;--w:128px;--sw:1.22;--o:0.8" data-x="-300" data-y="-240" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+        <span class="pez pez--desk" style="--x:93%;--y:50%;--w:62px;--sw:2.52;--o:0.5" data-x="-180" data-y="-110" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+        <span class="pez pez--desk" style="--x:52%;--y:72%;--w:84px;--sw:1.86;--o:0.6" data-x="240" data-y="-90" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+        <span class="pez pez--mov" style="--x:66%;--y:48%;--w:74px;--sw:2.11;--o:0.7" data-x="-150" data-y="-170" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+        <span class="pez pez--mov" style="--x:72%;--y:62%;--w:58px;--sw:2.69;--o:0.55" data-x="110" data-y="-130" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+        <span class="pez pez--mov" style="--x:78%;--y:92%;--w:66px;--sw:2.36;--o:0.6" data-x="-120" data-y="-120" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60" transform="translate(120 0) scale(-1 1)"/></svg></span>
+      </div>
+
+      <div class="hero__head" data-par="-40">
+        <h1 class="hero__title" id="heroTitle">La Narvarte<br> también<br> tiene mar</h1>
+      </div>
+
+      <div class="hero__copy" data-par="-60">
+        <p class="hero__lede" id="heroLede">Marisquería en Vértiz Narvarte, CDMX: aguachiles, ceviches, tostadas, tacos de pulpo y micheladas, frescos y bien servidos.</p>
+        <div class="hero__cta" id="heroCta">
+          <a class="link-arrow" href="#carta">Ver la carta <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero__plates" id="heroPlates">
+        <div class="plate plate--xl" data-depth="1">
+          <img src="img/contracorriente-1-plato.webp" width="1000" height="1000" alt="Aguachile verde con pepino, cebolla morada y eneldo, sobre mantel de lino al sol" fetchpriority="high">
+        </div>
+        <div class="plate plate--md" data-depth="1.8">
+          <img src="img/contracorriente-2-plato.webp" width="1000" height="1000" alt="Tostada de atún con pepino y hierbas frescas, sobre mantel de lino">
+        </div>
+        <div class="plate plate--sm" data-depth="2.6">
+          <img src="img/contracorriente-3-plato.webp" width="1000" height="1000" alt="Ceviche Mazatlán de sierra con pico de gallo y coco, sobre tostada">
+        </div>
+        <span class="pez pez--front" style="--sw:.78;--o:1" data-x="460" data-y="-260" aria-hidden="true"><svg viewBox="0 0 120 60"><use href="#pez" width="120" height="60"/></svg></span>
+      </div>
+
+    </section>
+
+    <!-- Tira de antojos -->
+    <div class="ticker" aria-hidden="true">
+      <div class="strip" data-strip data-speed="70">
+        <div class="strip__track">
+          <span class="ticker__item">Gordita de chicharrón prensado <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Aguachile negro <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Tlacoyo de frijol o requesón <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Ceviche Mazatlán <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Pescaditos <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Caldo de camarón <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Ceviche Todas mías <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Cóctel de camarón <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Taco de chicharrón de pulpo <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Sopa azteca <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Ceviche El fresco <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Aguachile verde <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Campechano grande <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Pescadillas <svg><use href="#pez"/></svg></span>
+          <span class="ticker__item">Tostada de salpicón de pulpo <svg><use href="#pez"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carta -->
+    <section class="carta" id="carta" data-section="carta">
+      <div class="carta__grid">
+        <div class="carta__plate-col">
+          <button class="carta__plate" id="cartaPlate" type="button" data-zoom="img/contracorriente-6.webp" data-caption="Gordita de chicharrón prensado" aria-label="Ampliar foto del platillo">
+            <img class="is-on" src="img/contracorriente-6-plato.webp" width="1000" height="1000" alt="Gordita con chicharrón de pulpo, aguacate, cebolla morada y queso" loading="lazy">
+            <img src="img/contracorriente-6-plato.webp" width="1000" height="1000" alt="" aria-hidden="true" loading="lazy">
+          </button>
+          <p class="carta__plate-caption" id="cartaCaption" aria-live="polite">Gordita de chicharrón prensado</p>
+        </div>
+
+        <div class="carta__body">
+          <div data-par="30">
+            <h2 class="h2" data-split>La carta</h2>
+            <p class="carta__note" data-fade>Precios en pesos mexicanos.<span class="carta__note-hover"> Pasa por un platillo para verlo en el plato.</span></p>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Secciones de la carta" id="tabs">
+            <span class="tabs__ink" id="tabsInk" aria-hidden="true"></span>
+            <button class="tab" role="tab" type="button" id="t-entradas" aria-controls="p-entradas" aria-selected="true">Entradas</button>
+            <button class="tab" role="tab" type="button" id="t-ceviches" aria-controls="p-ceviches" aria-selected="false" tabindex="-1">Ceviches</button>
+            <button class="tab" role="tab" type="button" id="t-cocteles" aria-controls="p-cocteles" aria-selected="false" tabindex="-1">Cócteles</button>
+            <button class="tab" role="tab" type="button" id="t-revivir" aria-controls="p-revivir" aria-selected="false" tabindex="-1">Para revivir</button>
+            <button class="tab" role="tab" type="button" id="t-tacos" aria-controls="p-tacos" aria-selected="false" tabindex="-1">Tacos</button>
+            <button class="tab" role="tab" type="button" id="t-tostadas" aria-controls="p-tostadas" aria-selected="false" tabindex="-1">Tostadas</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-entradas" aria-labelledby="t-entradas" tabindex="0" data-plate="contracorriente-6" data-caption="Gordita de chicharrón prensado">
+            <ul class="dishes">
+              <li class="dish" data-plate="contracorriente-6" data-caption="Gordita de chicharrón prensado">
+                <div class="dish__head"><h3>Gordita de chicharrón prensado</h3><i></i><span class="price">$130</span></div>
+                <p>Servida con chicharrón de pulpo, salsa roja martajada y queso provolone. (1 pza.)</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Tlacoyo de frijol o requesón</h3><i></i><span class="price">$125</span></div>
+                <p>Servidos con camarones a la plancha, salsa roja martajada y queso provolone. (1 pza.)</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Tlacoyo de frijol</h3><i></i><span class="price">$130</span></div>
+                <p>Servido con chicharrón de pulpo, salsa roja martajada y queso provolone. (1 pza.)</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Pescaditos</h3><i></i><span class="price">$110</span></div>
+                <p>Filetes de sierra rebosados y acompañados de ralladura de zanahoria. (2 pzas.)</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Pescadillas</h3><i></i><span class="price">$120</span></div>
+                <p>Hechas de cazón y acompañadas de un caldito de camarón. (2 pzas.)</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-ceviches" aria-labelledby="t-ceviches" tabindex="0" hidden data-plate="contracorriente-5" data-caption="Ceviche Todas mías">
+            <ul class="dishes">
+              <li class="dish" data-plate="contracorriente-3" data-caption="Ceviche Mazatlán">
+                <div class="dish__head"><h3>Mazatlán</h3><i></i><span class="price">$210</span></div>
+                <p>Sierra con ralladura de zanahoria, pico de gallo, lajas de coco y un toque de nuestro aceite de habanero.</p>
+              </li>
+              <li class="dish" data-plate="contracorriente-5" data-caption="Ceviche Todas mías">
+                <div class="dish__head"><h3>Todas mías</h3><i></i><span class="price">$250</span></div>
+                <p>Es un campechano de camarones, pescado robalito, pulpo y el toque de la casa.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>El fresco</h3><i></i><span class="price">$230</span></div>
+                <p>De atún fresco con trozos de jícama y sandía, pepino, jitomate y Tajín.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-cocteles" aria-labelledby="t-cocteles" tabindex="0" hidden data-plate="contracorriente-9" data-caption="Tostada picosita">
+            <ul class="dishes">
+              <li class="dish">
+                <div class="dish__head"><h3>De camarón, grande</h3><i></i><span class="price">$220</span></div>
+                <p>Camarones delis con pepino, jitomate y salsitas de la casa mezcladas.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>De camarón, chico</h3><i></i><span class="price">$140</span></div>
+                <p>Camarones delis con pepino, jitomate y salsitas de la casa mezcladas.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>De pulpo, chico</h3><i></i><span class="price">$160</span></div>
+                <p>Pulpo con salsitas cocteleras de la casa, jitomate y pepino.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Campechano grande</h3><i></i><span class="price">$229</span></div>
+                <p>Camarones, pulpo y ostiones mezclados con salsas caseras, jitomate y pepino.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-revivir" aria-labelledby="t-revivir" tabindex="0" hidden data-plate="contracorriente-4" data-caption="Caldo de camarón">
+            <ul class="dishes">
+              <li class="dish" data-plate="contracorriente-4" data-caption="Caldo de camarón">
+                <div class="dish__head"><h3>Caldo de camarón, grande</h3><i></i><span class="price">$180</span></div>
+              </li>
+              <li class="dish" data-plate="contracorriente-4" data-caption="Caldo de camarón">
+                <div class="dish__head"><h3>Caldo de camarón, chico</h3><i></i><span class="price">$100</span></div>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Sopa azteca</h3><i></i><span class="price">$190</span></div>
+                <p>Con camarones para pelar y queso provolone.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Aguachile negro</h3><i></i><span class="price">$265</span></div>
+                <p>Camarones crudos y cocidos sobre una corona de berros, pepino y cebolla, todo bañado en nuestra rica salsa negra de la casa.</p>
+              </li>
+              <li class="dish" data-plate="contracorriente-1" data-caption="Aguachile verde">
+                <div class="dish__head"><h3>Aguachile verde</h3><i></i><span class="price">$265</span></div>
+                <p>Camarones crudos y cocidos sobre una corona de berros, pepino y cebolla, todo bañado en nuestra rica salsa de la casa con chile serrano.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tacos y tostadas: vienen de la carta turquesa publicada en Google Maps. CONFIRMAR PRECIOS con el cliente. -->
+          <div class="panel" role="tabpanel" id="p-tacos" aria-labelledby="t-tacos" tabindex="0" hidden data-plate="contracorriente-7" data-caption="Tacos gobernador">
+            <ul class="dishes">
+              <li class="dish">
+                <div class="dish__head"><h3>Taco de camarón rebozado</h3><i></i><span class="price">$90</span></div>
+                <p>Con pico de gallo de mango.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Taco de chicharrón de pulpo</h3><i></i><span class="price">$95</span></div>
+                <p>Con costra de queso provolone.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Taco de pescado rebozado</h3><i></i><span class="price">$75</span></div>
+                <p>Con pico de gallo de piña al mezcal.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Taco de chicharrón de pulpo con tripa</h3><i></i><span class="price">$105</span></div>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Taco de chicharrón norteño</h3><i></i><span class="price">$85</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p-tostadas" aria-labelledby="t-tostadas" tabindex="0" hidden data-plate="contracorriente-10" data-caption="Tostada de salpicón de pulpo">
+            <ul class="dishes">
+              <li class="dish">
+                <div class="dish__head"><h3>Tostada de camarón</h3><i></i><span class="price">$85</span></div>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Tostada de atún</h3><i></i><span class="price">$95</span></div>
+                <p>Con guacamole y chicharrón.</p>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Tostada de garra de león</h3><i></i><span class="price">$85</span></div>
+              </li>
+              <li class="dish" data-plate="contracorriente-10" data-caption="Tostada de salpicón de pulpo">
+                <div class="dish__head"><h3>Tostada de salpicón de pulpo</h3><i></i><span class="price">$90</span></div>
+              </li>
+              <li class="dish">
+                <div class="dish__head"><h3>Tostada de pescado</h3><i></i><span class="price">$75</span></div>
+                <p>Con leche de tigre con mango.</p>
+              </li>
+            </ul>
+          </div>
+
+          <a class="link-arrow carta__book" data-wa href="https://wa.me/?text=Hola%20Contracorriente%2C%20quiero%20reservar%20una%20mesa." target="_blank" rel="noopener">Ya se me antojó, quiero mesa <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="galeria" id="galeria" data-section="galeria">
+      <div class="wave" aria-hidden="true"></div>
+      <div class="galeria__head" data-par="50">
+        <h2 class="h2" data-split>Para que se te antoje</h2>
+        <p class="galeria__note" data-fade>Toca cualquier foto para abrirla.</p>
+      </div>
+      <!-- Corredor: dos rieles de fotos que vienen desde el fondo hacia quien mira.
+           Las fotos del riel derecho están aquí; el izquierdo se clona por JS. -->
+      <div class="corredor" id="corredor">
+        <div class="corredor__vista">
+          <div class="corredor__mundo">
+            <button class="cc" type="button" data-zoom="img/contracorriente-7.webp" data-caption="Tacos gobernador" aria-label="Ampliar foto: Tacos gobernador">
+              <img src="img/contracorriente-7-720.webp" width="720" height="720" alt="Taco gobernador con camarones, pimiento amarillo y cilantro, con caldito en taza de peltre" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-8.webp" data-caption="Tostada campechana" aria-label="Ampliar foto: Tostada campechana">
+              <img src="img/contracorriente-8-720.webp" width="720" height="720" alt="Tostada campechana con mariscos, jitomate y hojas verdes" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-4.webp" data-caption="Caldo de camarón" aria-label="Ampliar foto: Caldo de camarón">
+              <img src="img/contracorriente-4-720.webp" width="720" height="720" alt="Caldo de camarón en plato hondo, con limón y totopos" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-6.webp" data-caption="Gordita de chicharrón prensado" aria-label="Ampliar foto: Gordita de chicharrón prensado">
+              <img src="img/contracorriente-6-720.webp" width="720" height="720" alt="Gordita con chicharrón de pulpo, aguacate, cebolla morada y queso" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-2.webp" data-caption="Tostada asian" aria-label="Ampliar foto: Tostada asian">
+              <img src="img/contracorriente-2-720.webp" width="720" height="720" alt="Tostada de atún con pepino y hierbas frescas, sobre mantel de lino" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-5.webp" data-caption="Ceviche Todas mías" aria-label="Ampliar foto: Ceviche Todas mías">
+              <img src="img/contracorriente-5-720.webp" width="720" height="720" alt="Ceviche Todas mías con camarón, pepino y aguacate" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-10.webp" data-caption="Tostada de salpicón de pulpo" aria-label="Ampliar foto: Tostada de salpicón de pulpo">
+              <img src="img/contracorriente-10-720.webp" width="720" height="720" alt="Tostada de salpicón de pulpo con cebolla encurtida y hierbas" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-1.webp" data-caption="Aguachile verde" aria-label="Ampliar foto: Aguachile verde">
+              <img src="img/contracorriente-1-720.webp" width="720" height="720" alt="Aguachile verde con pepino, cebolla morada y eneldo, sobre mantel de lino al sol" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-9.webp" data-caption="Tostada picosita" aria-label="Ampliar foto: Tostada picosita">
+              <img src="img/contracorriente-9-720.webp" width="720" height="720" alt="Tostada picosita con camarones, pepino y hojas verdes" loading="lazy" decoding="async">
+            </button>
+            <button class="cc" type="button" data-zoom="img/contracorriente-3.webp" data-caption="Ceviche Mazatlán" aria-label="Ampliar foto: Ceviche Mazatlán">
+              <img src="img/contracorriente-3-720.webp" width="720" height="720" alt="Ceviche Mazatlán de sierra con pico de gallo y coco, sobre tostada" loading="lazy" decoding="async">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opiniones: textos reales de Google Maps, recortados sin alterar las palabras -->
+    <section class="opiniones" id="opiniones" data-section="opiniones" aria-labelledby="opinionesTitle">
+      <div class="wave" aria-hidden="true"></div>
+      <div class="opiniones__inner">
+        <div data-par="30">
+          <h2 class="opiniones__title" id="opinionesTitle" data-split>Lo dicen quienes ya vinieron</h2>
+        </div>
+        <div class="reviews" id="reviews" role="group" aria-roledescription="carrusel" aria-label="Opiniones de clientes" aria-live="off">
+          <figure class="review is-on" role="group" aria-roledescription="opinión" aria-label="1 de 5">
+            <blockquote class="review__quote">Sin temor podemos afirmar que es de los mejores ceviches de atún y aguachile que hemos probado en la ciudad.</blockquote>
+            <figcaption class="review__who"><span class="review__stars" role="img" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg></span><span>Miriam Téllez</span><span class="review__src">en Google</span></figcaption>
+          </figure>
+          <figure class="review" role="group" aria-roledescription="opinión" aria-label="2 de 5">
+            <blockquote class="review__quote">Es una joya oculta. Los mariscos son super frescos, el sazón delicioso y los precios muy justos, pues las porciones están muy bien servidas.</blockquote>
+            <figcaption class="review__who"><span class="review__stars" role="img" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg></span><span>Andrea Lona</span><span class="review__src">en Google</span></figcaption>
+          </figure>
+          <figure class="review" role="group" aria-roledescription="opinión" aria-label="3 de 5">
+            <blockquote class="review__quote">Superó mis expectativas. Riquísimo. Súper fresco, la comida deliciosa, la cerveza fresca.</blockquote>
+            <figcaption class="review__who"><span class="review__stars" role="img" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg></span><span>Lourdes Valdovinos</span><span class="review__src">en Google</span></figcaption>
+          </figure>
+          <figure class="review" role="group" aria-roledescription="opinión" aria-label="4 de 5">
+            <blockquote class="review__quote">Esa espera vale totalmente la pena. Se nota que los alimentos son frescos y de muy buena calidad.</blockquote>
+            <figcaption class="review__who"><span class="review__stars" role="img" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg></span><span>Aidaly Hernández</span><span class="review__src">en Google</span></figcaption>
+          </figure>
+          <figure class="review" role="group" aria-roledescription="opinión" aria-label="5 de 5">
+            <blockquote class="review__quote">Vale la pena darse una vuelta y pedir un coctelito o un buen taco.</blockquote>
+            <figcaption class="review__who"><span class="review__stars" role="img" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg><svg aria-hidden="true"><use href="#estrella"/></svg></span><span>Luis Miguel De la Fuente</span><span class="review__src">en Google</span></figcaption>
+          </figure>
+        </div>
+        <div class="reviews__bar">
+          <div class="rev-dots">
+            <button class="rev-dot" type="button" aria-label="Ver opinión 1 de 5" aria-current="true"><span></span></button>
+            <button class="rev-dot" type="button" aria-label="Ver opinión 2 de 5"><span></span></button>
+            <button class="rev-dot" type="button" aria-label="Ver opinión 3 de 5"><span></span></button>
+            <button class="rev-dot" type="button" aria-label="Ver opinión 4 de 5"><span></span></button>
+            <button class="rev-dot" type="button" aria-label="Ver opinión 5 de 5"><span></span></button>
+          </div>
+          <button class="rev-toggle" id="revToggle" type="button" aria-label="Pausar opiniones" hidden>
+            <svg class="rev-toggle__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>
+            <svg class="rev-toggle__play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+          </button>
+          <a class="link-arrow" href="https://www.google.com/maps/place/Contracorriente/data=!4m2!3m1!1s0x85d1ffaa7cdfb8ed:0x3e813a2975d02879" target="_blank" rel="noopener">Ver todas en Google <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="ubicacion" id="ubicacion" data-section="ubicacion">
+      <div class="wave" aria-hidden="true"></div>
+      <div class="ubicacion__grid">
+        <div class="ubicacion__copy">
+          <div data-par="40">
+            <h2 class="h2" data-split>El mar queda lejos. Nosotros, no.</h2>
+          </div>
+          <address class="ubicacion__address" data-fade>
+            Ixcateopan 72, Vértiz Narvarte<br>
+            Benito Juárez, 03600, CDMX
+          </address>
+          <p class="ubicacion__meta" data-fade>Metro División del Norte · 4.5 de 5 en Google (224 opiniones)</p>
+          <div class="ubicacion__actions" data-fade>
+            <a class="btn btn--ink magnet" href="https://www.google.com/maps/dir/?api=1&destination=Contracorriente%2C%20Ixcateopan%2072%2C%20V%C3%A9rtiz%20Narvarte&destination_place_id=ChIJ7bjffKr_0YUReSjQdSk6gT4" target="_blank" rel="noopener">
+              <span class="btn__roll" data-text="Cómo llegar">Cómo llegar</span>
+            </a>
+            <button class="link-arrow" type="button" id="copyAddress" data-copy="Ixcateopan 72, Vértiz Narvarte, Benito Juárez, 03600 Ciudad de México"><span data-copy-label>Copiar dirección</span></button>
+          </div>
+        </div>
+        <div class="ubicacion__map" id="mapFrame" data-reveal>
+          <iframe title="Mapa de Contracorriente en Ixcateopan 72, Narvarte" src="https://www.google.com/maps?q=Contracorriente,+Ixcateopan+72,+V%C3%A9rtiz+Narvarte,+CDMX&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="wave" aria-hidden="true"></div>
+    <div class="footer__cols">
+      <nav aria-label="Secciones">
+        <h2>Secciones</h2>
+        <a href="#inicio">Inicio</a>
+        <a href="#carta">Carta</a>
+        <a href="#galeria">Galería</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a data-wa href="https://wa.me/?text=Hola%20Contracorriente%2C%20quiero%20reservar%20una%20mesa." target="_blank" rel="noopener">Reservar</a>
+      </nav>
+      <div>
+        <h2>Visítanos</h2>
+        <p>Ixcateopan 72<br>Vértiz Narvarte<br>Benito Juárez, 03600<br>CDMX</p>
+      </div>
+      <div>
+        <h2>Horario</h2>
+        <p>Mié, sáb y dom<br>12:30 a 7:30 p.m.<br>Jue y vie<br>12:30 a 6:30 p.m.<br>Lun y mar: cerrado</p>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <a href="https://www.instagram.com/contracorriente_cdmx/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer__mark" id="footerMark"><img src="img/logo.svg" width="1024" height="1024" alt="Contra Corriente" loading="lazy"></p>
+    <div class="footer__base">
+      <span>Diseñado por <a href="https://www.almabruta.studio" target="_blank" rel="noopener">Alma Bruta</a></span>
+      <span class="footer__copy">© <span id="year">2026</span> Contracorriente</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa" id="waFloat" data-wa href="https://wa.me/?text=Hola%20Contracorriente%2C%20quiero%20reservar%20una%20mesa." target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+    <span class="wa__ping" aria-hidden="true"></span>
+    <svg class="wa__icon" aria-hidden="true"><use href="#whatsapp"/></svg>
+    <span class="wa__label">Reservar</span>
+  </a>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <div class="lightbox__stage" id="lbStage">
+      <img class="lightbox__img" id="lbImg" src="data:," alt="">
+    </div>
+    <p class="lightbox__caption" id="lbCaption" aria-live="polite"></p>
+    <button class="lb-btn lb-btn--close" id="lbClose" type="button" aria-label="Cerrar foto"><span></span><span></span></button>
+    <button class="lb-btn lb-btn--prev" id="lbPrev" type="button" aria-label="Foto anterior">←</button>
+    <button class="lb-btn lb-btn--next" id="lbNext" type="button" aria-label="Foto siguiente">→</button>
+  </dialog>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
