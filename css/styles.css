@@ -496,7 +496,8 @@ address { font-style: normal; }
   padding-block: var(--section);
   background: var(--abismo); color: var(--sobre-abismo);
 }
-.galeria__head { padding-inline: var(--gutter); max-width: 1320px; margin: 0 auto clamp(2rem, 5vw, 4rem); }
+.galeria__head { padding-inline: var(--gutter); max-width: 1320px; margin: 0 auto clamp(2rem, 5vw, 4rem); text-align: center; }
+.galeria__head .h2 { margin-inline: auto; }
 .galeria .h2 { color: var(--neon); }
 .galeria__note { margin-top: .75rem; }
 /* Corredor 3D: todas las medidas en cqw (porcentaje del ancho del contenedor) */
