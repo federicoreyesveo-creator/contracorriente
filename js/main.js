@@ -61,7 +61,8 @@
   const header = $('#header');
 
   const heroEl = $('#inicio');
-  const paintHeader = () => header.classList.toggle('is-solid', scrollY > heroEl.offsetHeight - 90);
+  // El logo se achica apenas empieza el scroll, para no tapar el texto del hero
+  const paintHeader = () => header.classList.toggle('is-solid', scrollY > 8);
   addEventListener('scroll', paintHeader, { passive: true });
   addEventListener('resize', paintHeader);
   paintHeader();
